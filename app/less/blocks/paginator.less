@@ -1,0 +1,45 @@
+.paginator {
+  display: flex;
+}
+
+.paginator__link {
+  display: block;
+  width: 38px;
+  margin-right: 10px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  
+  color: #000000;
+  font-family: "PT Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  text-decoration: none;
+  text-align: center;
+  
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  &:hover {
+    border-color: #bec7cb;
+  }
+  &:active {
+    border-color: #ef3341;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  &--active {
+    color: #ffffff;
+    
+    background-color: #ef3341;
+    border-radius: 3px;
+    
+    cursor: default;
+    &:hover {
+      border-color: #e5e5e5;
+    }
+  }
+  &--next {
+    width: 140px;
+  }
+}
