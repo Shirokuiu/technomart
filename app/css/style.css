@@ -1437,10 +1437,11 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 #slider .owl-nav {
   position: absolute;
-  top: 42%;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  height: 40px;
   margin: auto;
 }
 #slider .owl-nav .owl-prev,
