@@ -16,4 +16,24 @@ $(document).ready(function() {
       }
     }
   });
+  
+  $('#services__slider').owlCarousel({
+    loop:true,
+    margin:0,
+    nav: false,
+    mouseDrag: false,
+    touchDrag: false,
+    smartSpeed: 1,
+    responsive:{
+      0:{
+          items:1
+      },
+      600:{
+          items:1
+      },
+      1000:{
+          items:1
+      }
+    }
+  });
 });

@@ -32,13 +32,111 @@
   font-weight: 600;
 }
 
+#services__slider {
+  position: relative;
+  .owl-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 240px;
+    margin-top: 0;
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: -39px;
+      right: -1px;
+
+      background-image: url(../img/sprite.png);
+      background-position: 0px -2185px;
+      width: 10px;
+      height: 272px;
+    }
+    .owl-dot {
+      display: block;
+      &:nth-child(2) {
+        span {
+          &::before {
+            content: 'Гарантия';
+          }
+        }
+      }
+      &:nth-child(3) {
+        span {
+          box-shadow: none;
+          &::before {
+            content: 'Кредит';
+          }
+        }
+      }
+      span {
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        padding-top: 16px;
+        padding-left: 22px;
+        padding-bottom: 18px;
+        
+        text-align: left;
+        
+        background-color: #3b546f;
+        
+        border-radius: 0 0 0 0;
+        box-shadow: inset 0 -1px 0 #293449;
+        
+        transition: 0.1s ease-in-out;
+        &::before {
+          content: 'Доставка';
+          
+          color: #ffffff;
+          font-family: Cuprum;
+          font-size: 21px;
+          font-weight: 700;
+          line-height: 30px;
+        }
+        &:hover {
+          background-color: #293449;
+        }
+      }
+    }
+    .active {
+      span {
+        background-color: #ffffff;
+        &::before {
+          color: #32425c;
+        }
+        &:hover {
+          background-color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
 .services__slider {
+  display: block;
+}
+
+.services__listDescription {
   display: flex;
-  padding-bottom: 65px;
+  justify-content: center;
+  padding-bottom: 111px;
   
-  background-image: url(../img/services__slider-description-img.png);
-  background-position: 472px 19px;
   background-repeat: no-repeat;
+  &--delivery {
+    background-image: url("../img/services__slider-description-img.png");
+    background-position: 470px 27px;
+  }
+  &--guarantee {
+    background-image: url("../img/services__slider-description-img2.png");
+    background-position: 547px 0;
+  }
+  &--credit {
+    background-image: url("../img/services__slider-description-img3.png");
+        background-position: 472px 0;
+  }
 }
 
 .services__list {
@@ -64,41 +162,6 @@
   }
 }
 
-.services__items {
-  width: 240px;
-}
-
-.services__item {
-  display: block;
-  padding-left: 20px;
-  padding-top: 21px;
-  padding-bottom: 21px;
-
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 30px;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  
-  box-shadow: inset 0 -1px 0 rgb(41, 52, 73);
-  background-color: rgb(50, 66, 92);
-  &:hover {
-    background-color: #253148;
-  }
-  &--active {
-    color: rgb(50, 66, 92);
-    
-    background-color: rgb(255, 255, 255);
-    
-    cursor: default;
-    &:hover {
-      color: rgb(50, 66, 92);
-    
-      background-color: rgb(255, 255, 255);
-    }
-  }
-}
-
 .services__listDescription-headline {
   .reset();
   
@@ -115,6 +178,7 @@
   .reset();
   
   width: 275px;
+  margin-bottom: 40px;
   
   color: rgb(0, 0, 0);
   font-family: "PT Sans";
@@ -122,14 +186,51 @@
   font-weight: 600;
 }
 
+.services__listDescription-link {
+  display: inline-block;
+  min-width: 195px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  
+  background-color: #ff5257;
+  &:hover {
+    background-color: #ca2c37;
+  }
+}
+
 @media (max-width: 1024px) {
-  .services__slider {
-    background-position: 290px 108px;
+  .services__listDescription {
+    &--delivery {
+      background-position: 285px 27px;
+    }
+    &--guarantee {
+      background-position: 369px 27px;
+    }
+    &--credit {
+      background-position: 290px 27px;
+    }
+  }
+  
+  .services__listDescription-content {
+    position: relative;
+    left: 62px;
   }
 }
 
 @media (max-width: 800px) {
   .services__slider {
+    background-image: none;
+  }
+  
+  .services__listDescription {
     background-image: none;
   }
   
@@ -145,6 +246,76 @@
   
   .services__list {
     margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+   #services__slider {
+    .owl-dots {
+      top: auto;
+      left: 0;
+      right: 0;
+      bottom: 75px;
+      
+      width: auto;
+      &::before {
+        display: none;
+      }
+      .owl-dot {
+        display: inline-block;
+        margin-right: 10px;
+        span {
+          width: 15px;
+          height: 15px;
+          padding-top: 0;
+          padding-left: 0;
+          padding-bottom: 0;
+          
+          background-color: #333;
+          
+          border-radius: 50%;
+          box-shadow: none;
+          &:hover {
+            background-color: #b2b2b2;
+          }
+          &::before {
+            display: none;
+          }
+        }
+      }
+      .active {
+        span {
+          background-color: #b2b2b2;
+          &:hover {
+            background-color: #b2b2b2;
+          }
+        }
+      }
+    }
+  }
+  
+  .services__listDescription {
+    justify-content: flex-start;
+  }
+  
+  .services__listDescription-content {
+    position: static;
+    left: 0;
+    
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .services__listDescription-headline {
+    text-align: center;
+  }
+  
+  .services__listDescription-text {
+    width: 100%;
+  }
+  
+  .services__listDescription-link {
+    width: 100%;
   }
 }
 

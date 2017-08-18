@@ -88,9 +88,31 @@
   
   .main-nav__toggle {
     display: block;
+    &--open {
+      background-color: #31405d;
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
   
   .main-nav__list {
     display: none;
+    &--vissible {
+      display: block;
+      
+      background-color: #293449;
+    }
+  }
+  
+  .main-nav__item {
+    &:hover {
+      background-color: #3b546f;
+    }
+    &--active {
+      &:hover {
+        background-color: #293449;
+      }
+    }
   }
 }

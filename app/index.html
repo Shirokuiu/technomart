@@ -237,17 +237,33 @@
             <h2 class="services__titleHeadline">Сервисы</h2>
             <p class="services__titleText">Хороший интернет-магазин отличается от плохого не только ценами! Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
           </div>
-          <div class="services__slider">
-            <div class="services__listWrap">
-              <ul class="services__list">
-                <li class="services__items"><a href="#" class="services__item services__item--active">Доставка</a></li>
-                <li class="services__items"><a href="#" class="services__item">Гарантия</a></li>
-                <li class="services__items"><a href="#" class="services__item">Кредит</a></li>
-              </ul>
-            </div>
-            <div class="services__listDescription">
-              <h2 class="services__listDescription-headline">Доставка</h2>
-              <p class="services__listDescription-text">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж!</p>
+          <div class="services__sliderWrap">
+            <div id="services__slider" class="services__slider owl-carousel owl-theme">
+              <div>
+                <div class="services__listDescription services__listDescription--delivery">
+                  <div class="services__listDescription-content">
+                    <h2 class="services__listDescription-headline">Доставка</h2>
+                    <p class="services__listDescription-text">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж!</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="services__listDescription services__listDescription--guarantee">
+                  <div class="services__listDescription-content">
+                    <h2 class="services__listDescription-headline">Гарантия</h2>
+                    <p class="services__listDescription-text">Если купленный у нас товар поломается или заискрит, а также в случае пожара, спровоцированного его возгаранием,  вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. Дом уж восстановите как-нибудь сами.</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="services__listDescription services__listDescription--credit">
+                  <div class="services__listDescription-content">
+                    <h2 class="services__listDescription-headline">Кредит</h2>
+                    <p class="services__listDescription-text">Залезть в долговую яму стало проще! Кредитные консультанты придут вам на помощь.</p>
+                    <a href="#" class="services__listDescription-link">Отправить заявку</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>                  
         </div>
@@ -329,5 +345,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
     <script src="js/owl.carousel.min.js" defer></script>
     <script src="js/common.js" defer></script>
+    <script src="js/main-nav.js"></script>
   </body>
 </html>

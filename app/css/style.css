@@ -1818,13 +1818,94 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   line-height: 24px;
   font-weight: 600;
 }
+#services__slider {
+  position: relative;
+}
+#services__slider .owl-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 240px;
+  margin-top: 0;
+}
+#services__slider .owl-dots::before {
+  content: '';
+  position: absolute;
+  top: -39px;
+  right: -1px;
+  background-image: url(../img/sprite.png);
+  background-position: 0px -2185px;
+  width: 10px;
+  height: 272px;
+}
+#services__slider .owl-dots .owl-dot {
+  display: block;
+}
+#services__slider .owl-dots .owl-dot:nth-child(2) span::before {
+  content: 'Гарантия';
+}
+#services__slider .owl-dots .owl-dot:nth-child(3) span {
+  box-shadow: none;
+}
+#services__slider .owl-dots .owl-dot:nth-child(3) span::before {
+  content: 'Кредит';
+}
+#services__slider .owl-dots .owl-dot span {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  padding-top: 16px;
+  padding-left: 22px;
+  padding-bottom: 18px;
+  text-align: left;
+  background-color: #3b546f;
+  border-radius: 0 0 0 0;
+  box-shadow: inset 0 -1px 0 #293449;
+  transition: 0.1s ease-in-out;
+}
+#services__slider .owl-dots .owl-dot span::before {
+  content: 'Доставка';
+  color: #ffffff;
+  font-family: Cuprum;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 30px;
+}
+#services__slider .owl-dots .owl-dot span:hover {
+  background-color: #293449;
+}
+#services__slider .owl-dots .active span {
+  background-color: #ffffff;
+}
+#services__slider .owl-dots .active span::before {
+  color: #32425c;
+}
+#services__slider .owl-dots .active span:hover {
+  background-color: #ffffff;
+}
 .services__slider {
+  display: block;
+}
+.services__listDescription {
   display: -webkit-box;
   display: flex;
-  padding-bottom: 65px;
-  background-image: url(../img/services__slider-description-img.png);
-  background-position: 472px 19px;
+  -webkit-box-pack: center;
+          justify-content: center;
+  padding-bottom: 111px;
   background-repeat: no-repeat;
+}
+.services__listDescription--delivery {
+  background-image: url("../img/services__slider-description-img.png");
+  background-position: 470px 27px;
+}
+.services__listDescription--guarantee {
+  background-image: url("../img/services__slider-description-img2.png");
+  background-position: 547px 0;
+}
+.services__listDescription--credit {
+  background-image: url("../img/services__slider-description-img3.png");
+  background-position: 472px 0;
 }
 .services__list {
   margin: 0;
@@ -1844,34 +1925,6 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 10px;
   height: 272px;
 }
-.services__items {
-  width: 240px;
-}
-.services__item {
-  display: block;
-  padding-left: 20px;
-  padding-top: 21px;
-  padding-bottom: 21px;
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 30px;
-  color: #ffffff;
-  text-decoration: none;
-  box-shadow: inset 0 -1px 0 #293449;
-  background-color: #32425c;
-}
-.services__item:hover {
-  background-color: #253148;
-}
-.services__item--active {
-  color: #32425c;
-  background-color: #ffffff;
-  cursor: default;
-}
-.services__item--active:hover {
-  color: #32425c;
-  background-color: #ffffff;
-}
 .services__listDescription-headline {
   margin: 0;
   padding: 0;
@@ -1886,10 +1939,28 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   margin: 0;
   padding: 0;
   width: 275px;
+  margin-bottom: 40px;
   color: #000000;
   font-family: "PT Sans";
   font-size: 13px;
   font-weight: 600;
+}
+.services__listDescription-link {
+  display: inline-block;
+  min-width: 195px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ff5257;
+}
+.services__listDescription-link:hover {
+  background-color: #ca2c37;
 }
 .about {
   display: -webkit-box;
@@ -2783,8 +2854,18 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   .commercial__img:last-child {
     padding-right: 0;
   }
-  .services__slider {
-    background-position: 290px 108px;
+  .services__listDescription--delivery {
+    background-position: 285px 27px;
+  }
+  .services__listDescription--guarantee {
+    background-position: 369px 27px;
+  }
+  .services__listDescription--credit {
+    background-position: 290px 27px;
+  }
+  .services__listDescription-content {
+    position: relative;
+    left: 62px;
   }
   .page-footer__navItems {
     margin-right: calc(48px);
@@ -2885,6 +2966,9 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
     width: auto;
   }
   .services__slider {
+    background-image: none;
+  }
+  .services__listDescription {
     background-image: none;
   }
   .services__title {
@@ -3012,8 +3096,24 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   .main-nav__toggle {
     display: block;
   }
+  .main-nav__toggle--open {
+    background-color: #31405d;
+  }
+  .main-nav__toggle--open:hover {
+    opacity: 1;
+  }
   .main-nav__list {
     display: none;
+  }
+  .main-nav__list--vissible {
+    display: block;
+    background-color: #293449;
+  }
+  .main-nav__item:hover {
+    background-color: #3b546f;
+  }
+  .main-nav__item--active:hover {
+    background-color: #293449;
   }
   .slider__carouselWrap {
     display: none;
@@ -3166,5 +3266,62 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 @media (max-width: 500px) {
   .commercial__img {
     width: 127px;
+  }
+}
+@media (max-width: 768px) {
+  #services__slider .owl-dots {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 75px;
+    width: auto;
+  }
+  #services__slider .owl-dots::before {
+    display: none;
+  }
+  #services__slider .owl-dots .owl-dot {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  #services__slider .owl-dots .owl-dot span {
+    width: 15px;
+    height: 15px;
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+    background-color: #333;
+    border-radius: 50%;
+    box-shadow: none;
+  }
+  #services__slider .owl-dots .owl-dot span:hover {
+    background-color: #b2b2b2;
+  }
+  #services__slider .owl-dots .owl-dot span::before {
+    display: none;
+  }
+  #services__slider .owl-dots .active span {
+    background-color: #b2b2b2;
+  }
+  #services__slider .owl-dots .active span:hover {
+    background-color: #b2b2b2;
+  }
+  .services__listDescription {
+    -webkit-box-pack: start;
+            justify-content: flex-start;
+  }
+  .services__listDescription-content {
+    position: static;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+  }
+  .services__listDescription-headline {
+    text-align: center;
+  }
+  .services__listDescription-text {
+    width: 100%;
+  }
+  .services__listDescription-link {
+    width: 100%;
   }
 }
